@@ -7,6 +7,7 @@ public class RailFenceCipher {
         String plainText = "lucas";
         int rail = 2;
         char[] splitPlaintText = plainText.toCharArray();
+        char[][] encryptedMatrix = new char[rail][plainText.length()];
     }
     
 }

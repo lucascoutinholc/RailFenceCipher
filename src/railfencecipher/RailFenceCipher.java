@@ -4,7 +4,7 @@ package railfencecipher;
 public class RailFenceCipher {
 
     public static void main(String[] args) {
-        
+        String plainText = "lucas";
     }
     
 }

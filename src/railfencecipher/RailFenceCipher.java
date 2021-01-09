@@ -46,6 +46,58 @@ public class RailFenceCipher {
                     }
                 }
                 break;
+            case 4:
+                int a = 0,
+                 b = 1,
+                 c = 2,
+                 d = 3;
+                for (int line = 0; line < rail; line++) {
+                    for (int column = 0; column < plainText.length(); column++) {
+                        if (line == 0 && a < plainText.length()) {
+                            encryptedMatrix[line][a] = splitPlaintText[a];
+                            a += 6;
+                        }
+                        if (line == 1 && b < plainText.length()) {
+                            encryptedMatrix[line][b] = splitPlaintText[b];
+                            switch (b) {
+                                case 5:
+                                case 11:
+                                case 17:
+                                case 23:
+                                case 29:
+                                case 35:
+                                case 41:
+                                    b += 2;
+                                    break;
+                                default:
+                                    b += 4;
+                                    break;
+                            }
+                        }
+                        if (line == 2 && c < plainText.length()) {
+                            encryptedMatrix[line][c] = splitPlaintText[c];
+                            switch (c) {
+                                case 4:
+                                case 10:
+                                case 16:
+                                case 22:
+                                case 28:
+                                case 34:
+                                case 40:
+                                    c += 4;
+                                    break;
+                                default:
+                                    c += 2;
+                                    break;
+                            }
+                        }
+                        if (line == 3 && d < plainText.length()) {
+                            encryptedMatrix[line][d] = splitPlaintText[d];
+                            d += 6;
+                        }
+                    }
+                }
+                break;
         }
     }
 

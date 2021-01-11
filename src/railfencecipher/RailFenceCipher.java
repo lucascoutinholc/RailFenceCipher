@@ -16,16 +16,15 @@ public class RailFenceCipher {
                 aux5 = 4;
         switch (rail) {
             case 2:
-                for (int line = 0; line < rail; line++) { //For 2 rails
+                for (int line = 0; line < rail; line++) {
                     for (int column = 0; column < plainText.length(); column++) {
-                        if (line == column) {
-                            encryptedMatrix[line][column] = splitPlaintText[column];
+                        if (line == 0 && aux < plainText.length()) {
+                            encryptedMatrix[line][aux] = splitPlaintText[aux];
+                            aux += 2;
                         }
-                        if (line == 0 && column % 2 == 0) {
-                            encryptedMatrix[line][column] = splitPlaintText[column];
-                        }
-                        if (line == 1 && column % 2 != 0) {
-                            encryptedMatrix[line][column] = splitPlaintText[column];
+                        if (line == 1 && aux2 < plainText.length()) {
+                            encryptedMatrix[line][aux2] = splitPlaintText[aux2];
+                            aux2 += 2;
                         }
                     }
                 }

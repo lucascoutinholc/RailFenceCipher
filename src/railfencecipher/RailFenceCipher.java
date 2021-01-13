@@ -1,11 +1,16 @@
 //Author: Lucas Coutinho de Almeida
 package railfencecipher;
 
+import java.util.Scanner;
+
 public class RailFenceCipher {
 
     public static void main(String[] args) {
-        String plainText = "pneumoultramicroscopicossilicovulcanoconiótico";
-        int rail = 5;
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Type plain text: ");
+        String plainText = scan.nextLine().toLowerCase();
+        System.out.print("Type a key/rail between 2 and 5: ");
+        int rail = scan.nextInt();
         int plainTextSize = plainText.length();
         char[] splitPlaintText = plainText.toCharArray();
         char[][] encryptedMatrix = new char[rail][plainTextSize];

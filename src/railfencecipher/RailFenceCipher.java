@@ -8,7 +8,7 @@ public class RailFenceCipher {
         int rail = 5;
         int plainTextSize = plainText.length();
         char[] splitPlaintText = plainText.toCharArray();
-        char[][] encryptedMatrix = new char[rail][plainText.length()];
+        char[][] encryptedMatrix = new char[rail][plainTextSize];
 
         int aux = 0,
                 aux2 = 1,
@@ -19,13 +19,13 @@ public class RailFenceCipher {
         switch (rail) {
             case 2:
                 for (int line = 0; line < rail; line++) {
-                    for (int column = 0; column < plainText.length(); column++) {
-                        if (line == 0 && aux < plainText.length()) {
+                    for (int column = 0; column < plainTextSize; column++) {
+                        if (line == 0 && aux < plainTextSize) {
                             encryptedMatrix[line][aux] = splitPlaintText[aux];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux]);
                             aux += 2;
                         }
-                        if (line == 1 && aux2 < plainText.length()) {
+                        if (line == 1 && aux2 < plainTextSize) {
                             encryptedMatrix[line][aux2] = splitPlaintText[aux2];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux2]);
                             aux2 += 2;
@@ -35,18 +35,18 @@ public class RailFenceCipher {
                 break;
             case 3:
                 for (int line = 0; line < rail; line++) {
-                    for (int column = 0; column < plainText.length(); column++) {
-                        if (line == 0 && aux < plainText.length()) {
+                    for (int column = 0; column < plainTextSize; column++) {
+                        if (line == 0 && aux < plainTextSize) {
                             encryptedMatrix[line][aux] = splitPlaintText[aux];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux]);
                             aux += 4;
                         }
-                        if (line == 1 && aux2 < plainText.length()) {
+                        if (line == 1 && aux2 < plainTextSize) {
                             encryptedMatrix[line][aux2] = splitPlaintText[aux2];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux2]);
                             aux2 += 2;
                         }
-                        if (line == 2 && aux3 < plainText.length()) {
+                        if (line == 2 && aux3 < plainTextSize) {
                             encryptedMatrix[line][aux3] = splitPlaintText[aux3];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux3]);
                             aux3 += 4;
@@ -56,13 +56,13 @@ public class RailFenceCipher {
                 break;
             case 4:
                 for (int line = 0; line < rail; line++) {
-                    for (int column = 0; column < plainText.length(); column++) {
-                        if (line == 0 && aux < plainText.length()) {
+                    for (int column = 0; column < plainTextSize; column++) {
+                        if (line == 0 && aux < plainTextSize) {
                             encryptedMatrix[line][aux] = splitPlaintText[aux];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux]);
                             aux += 6;
                         }
-                        if (line == 1 && aux2 < plainText.length()) {
+                        if (line == 1 && aux2 < plainTextSize) {
                             encryptedMatrix[line][aux2] = splitPlaintText[aux2];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux2]);
                             switch (aux2) {
@@ -80,7 +80,7 @@ public class RailFenceCipher {
                                     break;
                             }
                         }
-                        if (line == 2 && aux3 < plainText.length()) {
+                        if (line == 2 && aux3 < plainTextSize) {
                             encryptedMatrix[line][aux3] = splitPlaintText[aux3];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux3]);
                             switch (aux3) {
@@ -98,7 +98,7 @@ public class RailFenceCipher {
                                     break;
                             }
                         }
-                        if (line == 3 && aux4 < plainText.length()) {
+                        if (line == 3 && aux4 < plainTextSize) {
                             encryptedMatrix[line][aux4] = splitPlaintText[aux4];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux4]);
                             aux4 += 6;
@@ -108,13 +108,13 @@ public class RailFenceCipher {
                 break;
             case 5:
                 for (int line = 0; line < rail; line++) {
-                    for (int column = 0; column < plainText.length(); column++) {
-                        if (line == 0 && aux < plainText.length()) {
+                    for (int column = 0; column < plainTextSize; column++) {
+                        if (line == 0 && aux < plainTextSize) {
                             encryptedMatrix[line][aux] = splitPlaintText[aux];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux]);
                             aux += 8;
                         }
-                        if (line == 1 && aux2 < plainText.length()) {
+                        if (line == 1 && aux2 < plainTextSize) {
                             encryptedMatrix[line][aux2] = splitPlaintText[aux2];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux2]);
                             switch (aux2) {
@@ -130,12 +130,12 @@ public class RailFenceCipher {
                                     break;
                             }
                         }
-                        if (line == 2 && aux3 < plainText.length()) {
+                        if (line == 2 && aux3 < plainTextSize) {
                             encryptedMatrix[line][aux3] = splitPlaintText[aux3];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux3]);
                             aux3 += 4;
                         }
-                        if (line == 3 && aux4 < plainText.length()) {
+                        if (line == 3 && aux4 < plainTextSize) {
                             encryptedMatrix[line][aux4] = splitPlaintText[aux4];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux4]);
                             switch (aux4) {
@@ -151,7 +151,7 @@ public class RailFenceCipher {
                                     break;
                             }
                         }
-                        if (line == 4 && aux5 < plainText.length()) {
+                        if (line == 4 && aux5 < plainTextSize) {
                             encryptedMatrix[line][aux5] = splitPlaintText[aux5];
                             encryptedPlainText += String.valueOf(encryptedMatrix[line][aux5]);
                             aux5 += 8;
